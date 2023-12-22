@@ -4,6 +4,9 @@ import com.example.voiture.entities.Client;
 import com.example.voiture.entities.Voiture;
 import com.example.voiture.repository.VoitureRepository;
 import com.example.voiture.service.ClientService;
+
+import jakarta.persistence.Transient;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,6 +23,7 @@ public class VoitureApplication {
         SpringApplication.run(VoitureApplication.class, args);
     }
 
+    @Transient
     @Bean
     CommandLineRunner initialiserBaseH2(VoitureRepository voitureRepository,
                                         ClientService clientService){
